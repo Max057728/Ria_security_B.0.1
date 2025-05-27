@@ -71,18 +71,7 @@ client.on("messageCreate", async (message) => {
   }
 });
 
-// Web server (facoltativo ma utile su Fly.io)
-const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.get("/", (req, res) => {
-  res.send("Bot online!");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server attivo su porta ${PORT}`);
 });
-
-app.listen(PORT, () => {
-  console.log(`🌐 Web server attivo sulla porta ${PORT}`);
-});
-
-// Login
-client.login(process.env.TOKEN);
