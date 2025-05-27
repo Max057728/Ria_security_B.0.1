@@ -10,5 +10,7 @@ RUN npm install
 # Copia tutto il resto del progetto
 COPY . .
 
+ENV PORT=3000
+
 # Comando per avviare il bot
 CMD ["node", "index.js"]
